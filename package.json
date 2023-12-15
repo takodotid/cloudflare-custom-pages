@@ -1,19 +1,42 @@
 {
-  "name": "@takodotid/cloudflare-custom-pages",
-  "version": "1.0.0",
-  "description": "A template for HTML and CSS",
-  "main": "index.html",
-  "scripts": {
-    "start": "serve"
-  },
-  "keywords": [
-    "html",
-    "css"
-  ],
-  "license": "MIT",
-  "devDependencies": {
-    "serve": "^11.2.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.2.0"
-  }
+    "name": "@takodotid/cloudflare-custom-pages",
+    "version": "1.0.0",
+    "description": "A template for HTML and CSS",
+    "main": "index.html",
+    "scripts": {
+        "start": "serve"
+    },
+    "keywords": [
+        "html",
+        "css"
+    ],
+    "license": "MIT",
+    "prettier": "@raflymln/prettier-config",
+    "eslintConfig": {
+        "settings": {
+            "import/extensions": [
+                ".ts",
+                ".tsx"
+            ]
+        },
+        "extends": [
+            "@raflymln/eslint-config"
+        ],
+        "rules": {
+            "tailwindcss/no-custom-classname": [
+                "error",
+                {
+                    "cssFiles": []
+                }
+            ]
+        }
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^8.3.1",
+        "@raflymln/eslint-config": "^1.2.1",
+        "@raflymln/prettier-config": "^1.0.0",
+        "serve": "^11.2.0",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^7.2.0"
+    }
 }
