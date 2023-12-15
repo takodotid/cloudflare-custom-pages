@@ -1,3 +1,5 @@
+<img src="./logo.svg" width="250" />
+
 # Cloudflare Custom Pages
 
 > *Ini hasil iseng developer Tako*
