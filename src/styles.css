@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -41,6 +41,10 @@ main {
   border-radius: 6px;
 }
 
+#code ul {
+  list-style: none;
+}
+
 video {
   margin-top: 12px;
   margin-bottom: 12px;
@@ -48,12 +52,13 @@ video {
 }
 
 #video {
-  /* display: none; */
+  display: none;
   height: 400px;
 }
 
 #logo {
   margin-bottom: 12px;
+  width: 120px;
 }
 
 h1 {
@@ -72,15 +77,17 @@ h2 {
 }
 
 p {
+  font-weight: 900;
   margin: 0;
 }
 
 hr {
   border-color: #fdfdfd;
   width: 100%;
+  max-width: 500px;
 }
 
-#loadingbar {
+#refresh-bar {
   background: #fdfdfd;
   border-color: #fdfdfd;
   border-width: 4px;
@@ -90,11 +97,9 @@ hr {
   margin: auto;
   border-radius: 999px;
   overflow: hidden;
-  margin-top: 24px;
-  margin-bottom: 24px;
 }
 
-#loadingbar > div {
+#refresh-bar > section {
   background: #ec4c4f;
   width: 100%;
   height: 100%;
@@ -102,6 +107,11 @@ hr {
   animation-name: fill-in;
   animation-duration: 15s;
   transform-origin: left;
+}
+
+#copyright {
+  margin-top: 25px;
+  max-width: 500px;
 }
 
 @keyframes fill-in {
