@@ -1,29 +1,55 @@
 <!doctype html>
 
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <title>Tako - Access Blocked</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <link rel="stylesheet" href="https://takodotid.github.io/cloudflare-custom-pages/src/styles.css" />
-        <link rel="icon" type="image/png" href="https://takodotid.github.io/cloudflare-custom-pages/src/icon.png" />
-    </head>
+    <title>Tako - Access Blocked</title>
 
-    <body>
-        <main>
-            <img src="https://takodotid.github.io/cloudflare-custom-pages/logo.svg" alt="logo tako keren" id="logo" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="./icon.png" />
 
-            <h1>Loh Kok Kamu Ke Block? 🤔</h1>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;900&display=swap");
 
-            <p>
-                Join Discord Tako di
-                <a href="https://discord.gg/tako">https://discord.gg/tako</a>
-            </p>
+        * {
+            font-family: "Nunito", sans-serif;
+        }
+    </style>
+</head>
 
-            <span id="copyright">© 2023 Tako. All Rights Reserved under PT Rumah Kreasi Bersama, company registered in Indonesia.</span>
-        </main>
-    </body>
+<body>
+    <main id="default" class="bg-red-400 text-white flex-col items-center justify-center gap-6 h-dvh hidden">
+        <img src="../logo.svg" class="relative w-40 z-10" />
+
+        <div class="flex flex-col justify-center items-center gap-2">
+            <h1 class="font-semibold text-2xl text-center max-w-screen-md z-10">Kamu Diblokir Untuk Mengakses Tako!
+            </h1>
+
+            <p class="max-w-screen-md text-center">Akses kamu dinilai berbahaya dan tidak sesuai dengan akses yang
+                layak, jika kamu merasa ini merupakan sebuah kesalahan, silahkan hubungi layanan bantuan kami di server
+                Discord Tako di bawah ini.</p>
+        </div>
+
+        <div class="flex gap-4 relative z-10 *:py-3 *:px-4 *:rounded-md *:duration-200">
+            <a href="https://discord.gg/tako" target="_blank" class="bg-[#37A2EA] hover:opacity-75">Join Discord
+                Tako</a>
+        </div>
+    </main>
+
+    <script>
+        // Only show not on overlay
+        if (!window.location.pathname.startsWith("/overlay")) {
+            document.getElementById('default').style.display = "flex"
+        }
+
+        setTimeout(() => {
+            window.location.reload();
+        }, 15 * 1000);
+    </script>
+</body>
+
 </html>

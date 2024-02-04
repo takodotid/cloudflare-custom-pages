@@ -1,43 +1,89 @@
 <!doctype html>
 
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <title>Tako - 500 Error</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <link rel="stylesheet" href="https://takodotid.github.io/cloudflare-custom-pages/src/styles.css" />
-        <link rel="icon" type="image/png" href="https://takodotid.github.io/cloudflare-custom-pages/src/icon.png" />
-    </head>
+    <title>Tako - Server Unavailable</title>
 
-    <body>
-        <main>
-            <img src="https://takodotid.github.io/cloudflare-custom-pages/logo.svg" alt="logo tako keren" id="logo" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="./icon.png" />
 
-            <video id="video" muted autoplay>
-                <source src="https://takodotid.github.io/cloudflare-custom-pages/let_him_cook.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;900&display=swap");
 
-            <h1>😱 BANG BENTAR, ADA ERROR 😱</h1>
+        * {
+            font-family: "Nunito", sans-serif;
+        }
 
-            <h2>Halaman Ini Akan <u>Auto Refresh</u> Setiap 15 Detik</h2>
-            <p>Join Discord Tako di <a href="https://discord.gg/tako">https://discord.gg/tako</a></p>
-            <div id="refresh-bar">
-                <section>&nbsp;</section>
-            </div>
+        .loader {
+            animation: loading 15s ease infinite;
+            transform-origin: left;
+        }
 
-            <hr />
+        @keyframes loading {
+            0% {
+                transform: translateX(-100%);
+            }
 
-<!--         <div id="code">
-                <p>::CLOUDFLARE_ERROR_500S_BOX::</p>
-            </div> -->
+            100% {
+                transform: translateX(0%);
+            }
+        }
+    </style>
+</head>
 
-            <span id="copyright">© 2023 Tako. All Rights Reserved under PT Rumah Kreasi Bersama, company registered in Indonesia.</span>
-        </main>
+<body>
+    <main id="overlay"
+        class="relative bg-red-400 max-w-lg rounded-md gap-2 items-stretch justify-center overflow-hidden text-white hidden flex-col px-4 py-4">
+        <img src="https://takodotid.github.io/cloudflare-custom-pages/logo.svg" class="relative w-20 z-10" />
 
-        <script src="https://takodotid.github.io/cloudflare-custom-pages/src/script.js"></script>
-    </body>
+        <h1 class="relative font-medium z-10 text-2xl">Terjadi Kesalahan, Mencoba Memperbaiki...</h1>
+        <p class="relative z-10 text-base opacity-75">Proses Ini Berjalan Otomatis</p>
+
+        <div class="absolute inset-0 bg-red-600/60 w-full h-full loader"></div>
+    </main>
+
+    <main id="default" class="bg-red-400 text-white flex-col items-center justify-center gap-6 h-dvh hidden">
+        <img src="../logo.svg" class="relative w-40 z-10" />
+
+        <h1 class="relative font-semibold text-2xl text-center max-w-screen-md z-10">Saat Ini Tako Sedang Tidak
+            Tersedia, Mohon
+            Menunggu...</h1>
+
+        <div class="flex gap-4 relative z-10 *:py-3 *:px-4 *:rounded-md *:duration-200">
+            <a href="https://discord.gg/tako" target="_blank" class="bg-[#37A2EA] hover:opacity-75">Join Discord
+                Tako</a>
+            <a href="https://tako.instatus.com" target="_blank" class="bg-[#29373D] hover:opacity-75">Cek Status</a>
+        </div>
+
+        <div class="relative z-10">::CLOUDFLARE_ERROR_500S_BOX::</div>
+
+        <div class="absolute inset-0 bg-red-500/60 w-full h-full animate-pulse"></div>
+        <div class="absolute left-0 top-0 bg-white w-full h-1 loader z-20"></div>
+    </main>
+
+    <script>
+        // If it's overlay
+        if (window.location.pathname.startsWith("/overlay")) {
+            // Only Show on Alert Overlay
+            if (window.location.pathname === "/overlay/alert") {
+                document.getElementById('overlay').style.display = "flex"
+            }
+        }
+
+        // Not Overlay
+        else {
+            document.getElementById('default').style.display = "flex"
+        }
+
+        setTimeout(() => {
+            window.location.reload();
+        }, 15 * 1000);
+    </script>
+</body>
+
 </html>
