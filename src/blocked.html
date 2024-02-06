@@ -22,7 +22,16 @@
 </head>
 
 <body>
-    <main id="default" class="bg-red-400 text-white flex-col items-center justify-center gap-6 h-dvh hidden">
+    <main id="overlay"
+        class="relative bg-red-500 max-w-xl rounded-md gap-2 items-stretch justify-center overflow-hidden text-white hidden flex-col px-4 py-4">
+        <img src="https://takodotid.github.io/cloudflare-custom-pages/logo.svg" class="relative w-20 z-10" />
+
+        <h1 class="relative font-medium z-10 text-2xl">Kamu Diblokir! Silahkan Menghubungi Layanan Bantuan Tako di
+            <a href="https://discord.gg/tako" class="hover:opacity-75 duration-200"><u>https://discord.gg/tako</u></a>
+        </h1>
+    </main>
+
+    <main id="default" class="bg-red-500 text-white flex-col items-center justify-center gap-6 h-dvh hidden">
         <img src="../logo.svg" class="relative w-40 z-10" />
 
         <div class="flex flex-col justify-center items-center gap-2">
@@ -41,8 +50,16 @@
     </main>
 
     <script>
-        // Only show not on overlay
-        if (!window.location.pathname.startsWith("/overlay")) {
+        // If it's overlay
+        if (window.location.pathname.startsWith("/overlay")) {
+            // Only Show on Alert Overlay
+            if (window.location.pathname === "/overlay/alert") {
+                document.getElementById('overlay').style.display = "flex"
+            }
+        }
+
+        // Not Overlay
+        else {
             document.getElementById('default').style.display = "flex"
         }
 
