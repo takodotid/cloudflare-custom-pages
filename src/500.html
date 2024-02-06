@@ -9,81 +9,57 @@
 
     <title>Tako - Server Unavailable</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <link rel="icon" type="image/png" href="./icon.png" />
-
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;900&display=swap");
-
-        * {
-            font-family: "Nunito", sans-serif;
-        }
-
-        .loader {
-            animation: loading 15s ease infinite;
-            transform-origin: left;
-        }
-
-        @keyframes loading {
-            0% {
-                transform: translateX(-100%);
-            }
-
-            100% {
-                transform: translateX(0%);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <main id="overlay"
-        class="relative bg-red-400 max-w-lg rounded-md gap-2 items-stretch justify-center overflow-hidden text-white hidden flex-col px-4 py-4">
-        <img src="https://takodotid.github.io/cloudflare-custom-pages/logo.svg" class="relative w-20 z-10" />
+    <noscript>Terjadi Kesalahan di Server Tako, Mohon Coba Refresh Kembali Halaman Ini.</noscript>
 
-        <h1 class="relative font-medium z-10 text-2xl">Terjadi Kesalahan, Mencoba Memperbaiki...</h1>
+    <main id="overlay"
+        class="relative bg-[#1A2B32]/60 max-w-xl rounded-md gap-1 items-stretch justify-center overflow-hidden text-white hidden flex-col px-4 py-4 animate-entry">
+        <img src="https://takodotid.github.io/cloudflare-custom-pages/logo.svg" class="relative w-20 z-10 pb-2" />
+
+        <h1 class="relative font-medium z-10 text-2xl text-balance">Terjadi Kesalahan, Mencoba Memperbaiki...</h1>
         <p class="relative z-10 text-base opacity-75">Proses Ini Berjalan Otomatis</p>
 
-        <div class="absolute inset-0 bg-red-600/60 w-full h-full loader"></div>
+        <div class="absolute inset-0 bg-[#1A2B32] w-full h-full animate-loader"></div>
     </main>
 
-    <main id="default" class="bg-red-400 text-white flex-col items-center justify-center gap-6 h-dvh hidden">
+    <main id="default"
+        class="relative bg-[#37A2EA]/75 text-white flex-col items-center justify-center gap-6 h-dvh hidden">
         <img src="../logo.svg" class="relative w-40 z-10" />
 
-        <h1 class="relative font-semibold text-2xl text-center max-w-screen-md z-10">Saat Ini Tako Sedang Tidak
-            Tersedia, Mohon
-            Menunggu...</h1>
+        <div class="relative z-10 flex flex-col justify-center items-center gap-2 max-w-screen-md text-center">
+            <h1 class="font-semibold text-2xl">Saat Ini Tako Sedang Tidak Tersedia
+            </h1>
+
+            <p class="text-balance">Server Tako saat ini sedang mengalami kendala teknis untuk saat ini, mohon menunggu
+                beberapa saat. <u>Halaman ini akan update secara otomatis</u>.</p>
+        </div>
 
         <div class="flex gap-4 relative z-10 *:py-3 *:px-4 *:rounded-md *:duration-200">
-            <a href="https://discord.gg/tako" target="_blank" class="bg-[#37A2EA] hover:opacity-75">Join Discord
+            <a href="https://discord.gg/tako" target="_blank" class="bg-[#EA76AE] hover:opacity-75">Join Discord
                 Tako</a>
             <a href="https://tako.instatus.com" target="_blank" class="bg-[#29373D] hover:opacity-75">Cek Status</a>
         </div>
 
-        <div class="relative z-10 p-4 bg-[#1A2B32] rounded-md max-w-screen-md">::CLOUDFLARE_ERROR_500S_BOX::</div>
+        <div class="relative z-10 p-4 bg-[#1A2B32] rounded-md w-full max-w-screen-md prose text-white mt-4">
+            ::CLOUDFLARE_ERROR_500S_BOX::</div>
 
-        <div class="absolute inset-0 bg-red-500/60 w-full h-full animate-pulse"></div>
-        <div class="absolute left-0 top-0 bg-white w-full h-1 loader z-20"></div>
+        <div class="absolute inset-0 bg-[#37A2EA] w-full h-full animate-pulse"></div>
+        <div class="absolute left-0 top-0 bg-white w-full h-1 animate-loader z-20"></div>
+
+        <div class="animate-pulse absolute top-4 right-4">
+            <svg class="size-6 animate-spin stroke-2 stroke-white fill-none" viewBox="0 0 24 24">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M12 3a9 9 0 1 0 9 9" />
+            </svg>
+        </div>
     </main>
 
-    <script>
-        // If it's overlay
-        if (window.location.pathname.startsWith("/overlay")) {
-            // Only Show on Alert Overlay
-            if (window.location.pathname === "/overlay/alert") {
-                document.getElementById('overlay').style.display = "flex"
-            }
-        }
-
-        // Not Overlay
-        else {
-            document.getElementById('default').style.display = "flex"
-        }
-
-        setTimeout(() => {
-            window.location.reload();
-        }, 15 * 1000);
-    </script>
+    <script type="text/javascript" src="./script.js"></script>
 </body>
 
 </html>

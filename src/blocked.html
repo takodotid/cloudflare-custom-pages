@@ -9,64 +9,59 @@
 
     <title>Tako - Access Blocked</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <link rel="icon" type="image/png" href="./icon.png" />
-
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;900&display=swap");
-
-        * {
-            font-family: "Nunito", sans-serif;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <main id="overlay"
-        class="relative bg-red-500 max-w-xl rounded-md gap-2 items-stretch justify-center overflow-hidden text-white hidden flex-col px-4 py-4">
-        <img src="https://takodotid.github.io/cloudflare-custom-pages/logo.svg" class="relative w-20 z-10" />
+    <noscript>Kamu Diblokir! Silahkan Menghubungi Layanan Bantuan Tako di https://discord.gg/tako</noscript>
 
-        <h1 class="relative font-medium z-10 text-2xl">Kamu Diblokir! Silahkan Menghubungi Layanan Bantuan Tako di
+    <main id="overlay"
+        class="relative bg-[#EC4C4F] max-w-xl rounded-md gap-1 items-stretch justify-center overflow-hidden text-white hidden flex-col px-4 py-4 entry">
+        <img src="https://takodotid.github.io/cloudflare-custom-pages/logo.svg" class="relative w-20 z-10 pb-2" />
+
+        <h1 class="relative font-medium z-10 text-2xl text-balance">Kamu Diblokir! Silahkan Menghubungi Layanan Bantuan
+            Tako di
             <a href="https://discord.gg/tako" class="hover:opacity-75 duration-200"><u>https://discord.gg/tako</u></a>
         </h1>
     </main>
 
-    <main id="default" class="bg-red-500 text-white flex-col items-center justify-center gap-6 h-dvh hidden">
+    <main id="default" class="relative bg-[#EC4C4F] text-white flex-col items-center justify-center gap-6 h-dvh hidden">
         <img src="../logo.svg" class="relative w-40 z-10" />
 
-        <div class="flex flex-col justify-center items-center gap-2">
-            <h1 class="font-semibold text-2xl text-center max-w-screen-md z-10">Kamu Diblokir Untuk Mengakses Tako!
+        <div class="flex flex-col justify-center items-center gap-2 max-w-screen-md relative z-10 text-center">
+            <h1 class="font-semibold text-2xl">Kamu Diblokir Untuk Mengakses Tako!
             </h1>
 
-            <p class="max-w-screen-md text-center">Akses kamu dinilai berbahaya dan tidak sesuai dengan akses yang
-                layak, jika kamu merasa ini merupakan sebuah kesalahan, silahkan hubungi layanan bantuan kami di server
-                Discord Tako di bawah ini.</p>
+            <p class="text-balance">Akses kamu dinilai berbahaya dan tidak sah, jika kamu merasa ini
+                merupakan sebuah kesalahan, <u>silahkan hubungi layanan bantuan kami di server
+                    Discord Tako di bawah ini</u>.</p>
         </div>
 
         <div class="flex gap-4 relative z-10 *:py-3 *:px-4 *:rounded-md *:duration-200">
             <a href="https://discord.gg/tako" target="_blank" class="bg-[#37A2EA] hover:opacity-75">Join Discord
                 Tako</a>
         </div>
+
+        <div class="relative z-10 p-4 bg-[#1A2B32] rounded-md w-full max-w-screen-md prose *:text-white mt-4">
+            <h3>Your Information:</h3>
+
+            <ul>
+                <li>IP Address: <span>::CLIENT_IP::</span></li>
+                <li>Ray ID: <span>::RAY_ID::</span></li>
+            </ul>
+        </div>
+
+        <div class="animate-pulse absolute top-4 right-4">
+            <svg class="size-6 animate-spin stroke-2 stroke-white fill-none" viewBox="0 0 24 24">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M12 3a9 9 0 1 0 9 9" />
+            </svg>
+        </div>
     </main>
 
-    <script>
-        // If it's overlay
-        if (window.location.pathname.startsWith("/overlay")) {
-            // Only Show on Alert Overlay
-            if (window.location.pathname === "/overlay/alert") {
-                document.getElementById('overlay').style.display = "flex"
-            }
-        }
-
-        // Not Overlay
-        else {
-            document.getElementById('default').style.display = "flex"
-        }
-
-        setTimeout(() => {
-            window.location.reload();
-        }, 15 * 1000);
-    </script>
+    <script type="text/javascript" src="./script.js"></script>
 </body>
 
 </html>

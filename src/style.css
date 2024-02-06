@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;900&display=swap");
+
+* {
+    font-family: "Nunito", sans-serif;
+}
+
+.animate-loader {
+    animation: loading 15s ease forwards;
+    transform-origin: left;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* Entry-Leave animation will finished before page reload/leave */
+.animate-entry {
+    animation: entry 10s ease forwards;
+}
+
+@keyframes entry {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    5% {
+        transform: translateY(0);
+    }
+
+    95% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}
