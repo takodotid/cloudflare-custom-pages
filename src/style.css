@@ -21,7 +21,7 @@
 
 /* Entry-Leave animation will finished before page reload/leave */
 .animate-entry {
-    animation: entry 10s ease forwards;
+    animation: entry 5s ease forwards;
 }
 
 @keyframes entry {
