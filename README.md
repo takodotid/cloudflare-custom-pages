@@ -7,6 +7,7 @@ This repository holds Cloudflare Custom Pages for Tako, licensed under MIT Licen
 ## Pages
 
 -   [500 Class Error](./src/500.html)
+-   [1000 Class Error](./src/1000.html)
 -   [Access Blocked](./src/blocked.html)
 
 ---
