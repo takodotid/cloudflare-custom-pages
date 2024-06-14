@@ -7,6 +7,8 @@ if (window.location.pathname.startsWith("/overlay")) {
     document.getElementById("default").style.display = "flex";
 }
 
+console.log("Interval started");
+
 setInterval(async () => {
     const response = await fetch("/", { method: "GET" });
 
