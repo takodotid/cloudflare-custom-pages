@@ -1,16 +1,19 @@
-// If it's overlay
 if (window.location.pathname.startsWith("/overlay")) {
     // Only Show on Alert Overlay
     if (window.location.pathname === "/overlay/alert") {
-        document.getElementById("overlay").style.display = "flex";
+        document.getElementById("indicator").style.display = "flex";
     }
-}
-
-// Not Overlay
-else {
+} else {
     document.getElementById("default").style.display = "flex";
 }
 
-setTimeout(() => {
-    window.location.reload();
+setTimeout(async () => {
+    const response = await fetch("/", { method: "GET" });
+
+    // Only reload when the server is up
+    if (!response.ok) {
+        console.log("Server is down, not reloading");
+    } else {
+        window.location.reload();
+    }
 }, 15 * 1000);
