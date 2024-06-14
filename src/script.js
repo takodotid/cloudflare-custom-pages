@@ -7,7 +7,7 @@ if (window.location.pathname.startsWith("/overlay")) {
     document.getElementById("default").style.display = "flex";
 }
 
-setTimeout(async () => {
+setInterval(async () => {
     const response = await fetch("/", { method: "GET" });
 
     // Only reload when the server is up
