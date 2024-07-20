@@ -5,7 +5,7 @@
 }
 
 .animate-loader {
-    animation: loading 15s ease forwards;
+    animation: loading 15s ease forwards infinite;
     transform-origin: left;
 }
 

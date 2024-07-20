@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <title>Access Blocked | Tako</title>
+
+        <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+        <link rel="icon" type="image/png" href="./icon.png" />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+
+    <body>
+        <noscript>Mohon Tunggu Sebentar Sebelum Mengakses Kembali!</noscript>
+
+        <main id="indicator" class="size-8 animate-pulse rounded-full bg-[#EA76AE]/50 hidden"></main>
+
+        <main id="default" class="relative bg-[#EA76AE] text-white flex-col items-center justify-center gap-6 min-h-dvh hidden p-20">
+            <img src="https://takodotid.github.io/cloudflare-custom-pages/logo.svg" class="relative w-40 z-10" />
+
+            <div class="flex flex-col justify-center items-center gap-2 max-w-screen-md relative z-10 text-center">
+                <h1 class="font-semibold text-2xl">Mohon Tunggu Sebentar!</h1>
+
+                <p class="text-balance">Akses kamu terlalu banyak, mohon tunggu sebentar sebelum mengakses kembali.</p>
+            </div>
+
+            <div class="flex gap-4 relative z-10 *:py-3 *:px-4 *:rounded-md *:duration-200">
+                <a href="https://discord.gg/tako" target="_blank" class="bg-[#37A2EA] hover:opacity-75">Join Discord Tako</a>
+                <a href="https://status.tako.id" target="_blank" class="bg-[#29373D] hover:opacity-75">Cek Status</a>
+            </div>
+
+            <div class="relative z-10 p-4 bg-[#1A2B32] rounded-md w-full max-w-screen-md prose prose-invert mt-4">
+                <h3>Your Information:</h3>
+
+                <ul>
+                    <li>Ray ID: <span>::RAY_ID::</span></li>
+                    <li>Your IP Address: <span>::CLIENT_IP::</span></li>
+                    <li>Your Geo Info: <span>::GEO::</span></li>
+                </ul>
+            </div>
+
+            <div class="absolute inset-0 bg-[#1A2B32]/25 opacity-10 w-full h-full animate-pulse"></div>
+            <div class="absolute left-0 top-0 bg-white w-full h-1 animate-loader z-20"></div>
+
+            <div class="animate-pulse absolute top-4 right-4">
+                <svg class="size-6 animate-spin stroke-2 stroke-white fill-none" viewBox="0 0 24 24">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12 3a9 9 0 1 0 9 9" />
+                </svg>
+            </div>
+        </main>
+
+        <script type="text/javascript" src="./script.js"></script>
+    </body>
+</html>
