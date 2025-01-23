@@ -10,7 +10,10 @@ if (window.location.pathname.startsWith("/overlay")) {
 console.log("Interval started");
 
 setInterval(async () => {
-    const response = await fetch("/", { method: "GET" });
+    const response = await fetch("/", {
+        method: "GET",
+        cache: "no-store",
+    });
 
     // Only reload when the server is up
     if (!response.ok) {
