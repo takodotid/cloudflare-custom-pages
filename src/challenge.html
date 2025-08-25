@@ -6,27 +6,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <title>Server Error | Tako</title>
+        <title>Please Wait | Tako</title>
 
         <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
         <link rel="icon" type="image/png" href="./icon.png" />
         <link rel="stylesheet" href="./style.css" />
     </head>
 
-    <body>
-        <noscript>An error occured on the server, please try again later.</noscript>
+    <body data-autoreload="false">
+        <noscript>Enable JavaScript and cookies to continue.</noscript>
 
-        <main id="indicator" class="size-6 animate-pulse rounded-full bg-[#37A2EA]/50 hidden"></main>
+        <main id="indicator" class="size-6 animate-pulse rounded-full bg-[#0F191E]/50 hidden"></main>
 
-        <main id="default" class="relative bg-[#37A2EA] text-white flex-col items-center justify-center gap-6 min-h-dvh hidden px-10 py-20 lg:pt-40">
+        <main id="default" class="relative bg-[#0F191E] text-white flex-col items-center justify-center gap-6 min-h-dvh hidden px-10 py-20 lg:pt-40">
             <img src="./images/logo.svg" class="relative w-24 z-10" />
 
             <div class="flex flex-col justify-center items-center gap-2 max-w-screen-md relative z-10 text-center">
-                <h1 class="font-black text-2xl">An Error Occured on the Server</h1>
-                <p class="text-balance">We’re experiencing a temporary issue, please wait a moment. <b>This page will update automatically</b>.</p>
+                <h1 class="font-black text-2xl">Validating Your Request</h1>
+                <p class="text-balance">We are reviewing the security of your connection before proceeding. <b>Please wait or complete the captcha below</b>.</p>
             </div>
 
-            <div class="relative z-10 p-4 bg-[#1A2B32] rounded-md w-full max-w-screen-md prose prose-invert mt-2">::CLOUDFLARE_ERROR_500S_BOX::</div>
+            <div class="relative z-10 mt-2">::CAPTCHA_BOX::</div>
 
             <div class="[&_a]:underline hover:[&_a]:opacity-75 [&_a]:duration-200 relative z-10 space-x-2 mt-auto">
                 <a href="https://discord.gg/tako" target="_blank">Discord Server</a>

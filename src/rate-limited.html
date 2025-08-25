@@ -14,25 +14,19 @@
     </head>
 
     <body>
-        <noscript>Mohon Tunggu Sebentar Sebelum Mengakses Kembali!</noscript>
+        <noscript>You’ve made too many requests in a short time, please wait a moment.</noscript>
 
         <main id="indicator" class="size-6 animate-pulse rounded-full bg-[#EA76AE]/50 hidden"></main>
 
-        <main id="default" class="relative bg-[#EA76AE] text-white flex-col items-center justify-center gap-6 min-h-dvh hidden p-20">
-            <img src="https://takodotid.github.io/cloudflare-custom-pages/logo.svg" class="relative w-40 z-10" />
+        <main id="default" class="relative bg-[#EA76AE] text-white flex-col items-center justify-center gap-6 min-h-dvh hidden px-10 py-20 lg:pt-40">
+            <img src="./images/logo.svg" class="relative w-24 z-10" />
 
             <div class="flex flex-col justify-center items-center gap-2 max-w-screen-md relative z-10 text-center">
-                <h1 class="font-semibold text-2xl">Mohon Tunggu Sebentar!</h1>
-
-                <p class="text-balance">Akses kamu terlalu banyak, mohon tunggu sebentar sebelum mengakses kembali.</p>
+                <h1 class="font-black text-2xl">You are Being Rate-Limited!</h1>
+                <p class="text-balance">You’ve made too many requests in a short time, please wait a moment. <b>This page will update automatically</b>.</p>
             </div>
 
-            <div class="flex gap-4 relative z-10 *:py-3 *:px-4 *:rounded-md *:duration-200">
-                <a href="https://discord.gg/tako" target="_blank" class="bg-[#37A2EA] hover:opacity-75">Join Discord Tako</a>
-                <a href="https://status.tako.id" target="_blank" class="bg-[#29373D] hover:opacity-75">Cek Status</a>
-            </div>
-
-            <div class="relative z-10 p-4 bg-[#1A2B32] rounded-md w-full max-w-screen-md prose prose-invert mt-4">
+            <div class="relative z-10 p-4 bg-[#1A2B32] rounded-md w-full max-w-screen-md prose prose-invert mt-2">
                 <h3>Your Information:</h3>
 
                 <ul>
@@ -40,6 +34,21 @@
                     <li>Your IP Address: <span>::CLIENT_IP::</span></li>
                     <li>Your Geo Info: <span>::GEO::</span></li>
                 </ul>
+            </div>
+
+            <div class="[&_a]:underline hover:[&_a]:opacity-75 [&_a]:duration-200 relative z-10 space-x-2 mt-auto">
+                <a href="https://discord.gg/tako" target="_blank">Discord Server</a>
+                <span>|</span>
+                <a href="https://status.tako.id" target="_blank">Server Status</a>
+                <span>|</span>
+                <a href="https://help.tako.id" target="_blank">Help Center</a>
+            </div>
+
+            <p class="text-sm max-w-xl text-center">©2023-2025 Tako. All Rights Reserved.<br />Trademark of <b>PT Hobimu Jadi Cuan</b>, registered company in Indonesia.</p>
+
+            <div class="flex items-center gap-4">
+                <img src="./images/cloudflare.png" alt="" class="h-6" />
+                <img src="./images/takocloud.png" alt="" class="h-4" />
             </div>
 
             <div class="absolute inset-0 bg-[#1A2B32]/25 opacity-10 w-full h-full animate-pulse"></div>

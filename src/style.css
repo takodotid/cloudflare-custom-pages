@@ -9,6 +9,10 @@
     transform-origin: left;
 }
 
+.trail {
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), 0.25rem 0.25rem 0 0 var(--tw-shadow-color, #000);
+}
+
 @keyframes loading {
     0% {
         transform: translateX(-100%);
@@ -16,28 +20,5 @@
 
     100% {
         transform: translateX(0%);
-    }
-}
-
-/* Entry-Leave animation will finished before page reload/leave */
-.animate-entry {
-    animation: entry 5s ease forwards;
-}
-
-@keyframes entry {
-    0% {
-        transform: translateY(-100%);
-    }
-
-    5% {
-        transform: translateY(0);
-    }
-
-    95% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(-100%);
     }
 }
