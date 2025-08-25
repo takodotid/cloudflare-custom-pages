@@ -1,6 +1,6 @@
-<img src="./src/logo.svg" width="250" />
+<img src="./src/images/logo.svg" width="120" />
 
-# Cloudflare Custom Pages
+# Tako's Cloudflare Custom Pages
 
 This repository holds Cloudflare Custom Pages for Tako, licensed under MIT License for learning use.
 
@@ -14,4 +14,4 @@ This repository holds Cloudflare Custom Pages for Tako, licensed under MIT Licen
 
 ---
 
-© 2023 Tako. All Rights Reserved Under PT Hobimu Jadi Cuan, private company registered in Indonesia.
+© 2023-2025 Tako. All Rights Reserved. Trademark of PT Hobimu Jadi Cuan, registered company in Indonesia.
